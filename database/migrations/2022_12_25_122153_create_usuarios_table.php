@@ -15,13 +15,6 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('email');
-            $table->string('siape');
-            $table->string('telefoneinstitucional');
-            $table->string('cargo');
-            $table->string('setor');
-            $table->foreignId('perfil_id');
             $table->timestamps();
         });
     }

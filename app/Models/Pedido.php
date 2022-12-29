@@ -17,15 +17,20 @@ class Pedido extends Model
         return $this->belongsTo(Controle::class);
     }
 
-    public function usuario(){
-        return $this->belongsTo(Usuario::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
     protected $fillable = [
+        'user_id',
+        'chave_id',
+        'controle_id',
         'status',
         'outros_materiais',
         'data_inicio' ,
         'data_fim' ,
         'observacoes'
     ];
+
+    public $timestamps = false;
 }

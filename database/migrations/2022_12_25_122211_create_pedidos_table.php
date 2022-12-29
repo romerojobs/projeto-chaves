@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->boolean('status');
-            $table->foreignId('usuario_id');
+            $table->foreignId('user_id');
             $table->foreignId('chave_id');
             $table->string('outros_materiais');
             $table->string('data_inicio');

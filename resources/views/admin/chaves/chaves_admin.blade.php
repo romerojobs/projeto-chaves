@@ -19,28 +19,31 @@
     <div class="row justify-content-center align-items-center g-2">
         <div class="col-12 text-center">
             <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Chave</th>
-                <th scope="col">Data Inicio</th>
-                <th scope="col">Data Fim</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <th scope="row">001</th>
-                <td>LabProg1</td>
-                <td>27/12 13h00</td>
-                <td>27/12 15h00</td>
-                </tr>
-            </tbody>
-            </table>
+                <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Chave</th>
+                    <th scope="col">Detalhes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($chaves as $chave)
+                    <tr>
+                    <th scope="row">{{$chave->id}}</th>
+                    <td>{{$chave->nomelab}}</td>
+                    <td><a href="detalhes_chave.html" class="col"><img src="detalhes.jfif" style="height:30px ;width:30px"/></a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+                </table>
         </div>
 
         <div class="col-12 m-2 text-center" style = "background-color:rgb(231,226,226)">
             <div class="row justify-content-center align-items-center g-2">
-                <a href="index.html" class="col">Inicio</a>
+                <a href="{{route('dashboard')}}" class="col">Inicio</a>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+                <a href="{{route('adicionarchave')}}" class="col">Adicionar Chave</a>
             </div>
         </div>
 

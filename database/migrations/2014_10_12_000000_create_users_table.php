@@ -17,6 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('siape')->unique();
+
+            $table->string('email');
+            $table->string('telefoneinstitucional');
+            $table->string('cargo');
+            $table->string('setor');
+            $table->foreignId('perfil_id');
+
             $table->timestamp('siape_verified_at')->nullable();
             $table->string('password');
             $table->boolean('first_login');

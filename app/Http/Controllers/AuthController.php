@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Perfil;
 use Hash;
 use Session;
 
@@ -58,14 +59,24 @@ class AuthController extends Controller
         'nome' => $data['nome'],
         'siape' => $data['siape'],
         'password' => Hash::make($data['password']),
-        'first_login' => true
+        'first_login' => true,
+        'email' => "aleatorio@email.com",
+        'telefoneinstitucional' => "4002-8922",
+        'cargo' => "Professor",
+        'setor' => "Sofredor",
+        'perfil_id' => 1
       ]);
     }    
     
     public function dashboard()
     {
         if(Auth::check()){
-            return view('usuario.dashboard');
+           if(Auth::user()->perfil->tipo == "admin"){
+                return view('admin.dashboardadmin',['user' =>Auth::user()]);
+           }
+           if(Auth::user()->perfil->tipo == "user"){
+                return view('usuario.indexusuario',['user' =>Auth::user()]);
+           }
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');

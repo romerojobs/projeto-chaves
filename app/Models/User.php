@@ -21,7 +21,12 @@ class User extends Authenticatable
         'nome',
         'siape',
         'password',
-        'first_login'
+        'first_login',
+        'email',
+        'telefoneinstitucional',
+        'cargo',
+        'setor',
+        'perfil_id'
     ];
 
     /**
@@ -42,4 +47,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function perfil(){
+        return $this->belongsTo(Perfil::class);
+    }
+    public function pedido(){
+        return $this->hasMany(Pedido::class);
+    }
 }

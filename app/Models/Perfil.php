@@ -9,8 +9,8 @@ class Perfil extends Model
 {
     use HasFactory;
 
-    public function usuario(){
-        return $this->hasMany(Usuario::class);
+    public function user(){
+        return $this->hasMany(User::class);
     }
 
     protected $fillable = [
