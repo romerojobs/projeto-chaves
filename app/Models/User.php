@@ -24,6 +24,7 @@ class User extends Authenticatable
         'first_login',
         'email',
         'telefoneinstitucional',
+        'telefonecelular',
         'cargo',
         'setor',
         'perfil_id'

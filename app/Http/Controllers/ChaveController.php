@@ -17,7 +17,17 @@ class ChaveController extends Controller
         Chave::create([
             'nomelab' => $request->nomelab,
             'categoria' => $request->categoria,
-            'descricao' => $request->descricao
+            'descricao' => $request->descricao,
+            'ativo' => false
         ]);
+        session()->flash('mensagemLaboratorio' , 'Chave adicionada com sucesso!');
+        return redirect()->route('dashboard');
+    }
+
+    public function indexDetalhes(Request $request){
+        return view('admin.chaves.detalhechave');
+    }
+    public function labsCategoria(Request $request){
+        return view('admin.chaves.chaves_categoria',['chaves' => Chave::where('categoria',$request->categoria)->get()]);
     }
 }

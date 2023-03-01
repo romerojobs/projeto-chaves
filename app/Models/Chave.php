@@ -16,6 +16,7 @@ class Chave extends Model
     protected $fillable = [
         'nomelab',
         'categoria',
-        'descricao'
+        'descricao',
+        'ativo'
     ];
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('siape')->unique();
 
             $table->string('email');
-            $table->string('telefoneinstitucional');
+            $table->string('telefonecelular');
             $table->string('cargo');
             $table->string('setor');
             $table->foreignId('perfil_id');

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nomelab');
             $table->string('categoria');
             $table->string('descricao');
+            $table->boolean('ativo');
             $table->timestamps();
         });
     }

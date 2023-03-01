@@ -19,10 +19,9 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('chave_id');
             $table->string('outros_materiais');
-            $table->string('data_inicio');
-            $table->string('data_fim');
             $table->string('observacoes');
-            $table->foreignId('controle_id');
+            $table->string('controle');
+            $table->timestamps();
         });
     }
 

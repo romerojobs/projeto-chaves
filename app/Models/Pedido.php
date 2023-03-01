@@ -24,13 +24,11 @@ class Pedido extends Model
     protected $fillable = [
         'user_id',
         'chave_id',
-        'controle_id',
+        'controle',
         'status',
         'outros_materiais',
         'data_inicio' ,
         'data_fim' ,
         'observacoes'
     ];
-
-    public $timestamps = false;
 }
